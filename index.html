@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Borck</title>
+  <meta name="description" content="Personal launcher — everything Michael Borck in one place." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf6;
+      --panel: #f3f2ec;
+      --text: #1a1a1c;
+      --gray-1: #4a4a4f;
+      --gray-2: #82827e;
+      --gray-3: #d6d6cf;
+      --accent: #4a6e62;
+      --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .header { margin-bottom: 3rem; }
+
+    .name {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: var(--text);
+    }
+
+    .name .surname { color: var(--accent); }
+
+    .role {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--gray-1);
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      padding: 1.1rem 1.3rem;
+      background: var(--panel);
+      border: 1px solid var(--gray-3);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .link:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .link-label { font-weight: 600; font-size: 0.95rem; }
+    .link-dest {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gray-2);
+      margin-top: 0.35rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-3);
+      font-size: 0.85rem;
+      color: var(--gray-2);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="header">
+    <h1 class="name">Michael<br><span class="surname">Borck</span></h1>
+    <p class="role">Everything in one place.</p>
+  </div>
+
+  <div class="grid">
+    <a class="link" href="https://borck.dev">
+      <span class="link-label">Hub</span>
+      <span class="link-dest">borck.dev</span>
+    </a>
+    <a class="link" href="https://borck.education">
+      <span class="link-label">Education</span>
+      <span class="link-dest">borck.education</span>
+    </a>
+    <a class="link" href="https://tools.borck.education">
+      <span class="link-label">Tools</span>
+      <span class="link-dest">tools.borck.education</span>
+    </a>
+    <a class="link" href="https://teach.borck.education">
+      <span class="link-label">Teaching</span>
+      <span class="link-dest">teach.borck.education</span>
+    </a>
+    <a class="link" href="https://books.borck.education">
+      <span class="link-label">Books</span>
+      <span class="link-dest">books.borck.education</span>
+    </a>
+    <a class="link" href="https://research.borck.dev">
+      <span class="link-label">Research</span>
+      <span class="link-dest">research.borck.dev</span>
+    </a>
+    <a class="link" href="https://resume.borck.dev">
+      <span class="link-label">Resume</span>
+      <span class="link-dest">resume.borck.dev</span>
+    </a>
+    <a class="link" href="https://retroverse.studio">
+      <span class="link-label">Retroverse</span>
+      <span class="link-dest">retroverse.studio</span>
+    </a>
+    <a class="link" href="https://8020workshop.com">
+      <span class="link-label">Workshop</span>
+      <span class="link-dest">8020workshop.com</span>
+    </a>
+  </div>
+
+  <footer>
+    <p>Michael Borck · Perth, WA · <a href="mailto:hello@borck.dev">hello@borck.dev</a></p>
+  </footer>
+</main>
+</body>
+</html>
