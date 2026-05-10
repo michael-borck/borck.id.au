@@ -63,6 +63,41 @@
       gap: 0.85rem;
     }
 
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray-2);
+      margin: 3rem 0 1rem;
+    }
+
+    .section-label:first-of-type { margin-top: 0; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.9rem;
+      background: var(--panel);
+      border: 1px solid var(--gray-3);
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--gray-1);
+      font-size: 0.82rem;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
     .link {
       display: flex;
       flex-direction: column;
@@ -107,6 +142,7 @@
     <p class="role">Everything in one place.</p>
   </div>
 
+  <h2 class="section-label">Built</h2>
   <div class="grid">
     <a class="link" href="https://borck.dev">
       <span class="link-label">Bio</span>
@@ -148,6 +184,21 @@
       <span class="link-label">Workshop</span>
       <span class="link-dest">8020workshop.com</span>
     </a>
+  </div>
+
+  <h2 class="section-label">Elsewhere</h2>
+  <div class="chips">
+    <a class="chip" href="https://curtin.academia.edu/MichaelBorck">Academia</a>
+    <a class="chip" href="https://about.me/michaelborck">about.me</a>
+    <a class="chip" href="https://www.facebook.com/michael.borck/">Facebook</a>
+    <a class="chip" href="https://github.com/michael-borck">GitHub</a>
+    <a class="chip" href="https://scholar.google.com/citations?user=fwNMowoAAAAJ&hl=en">Google Scholar</a>
+    <a class="chip" href="https://linkedin.com/in/michaelborck">LinkedIn</a>
+    <a class="chip" href="https://orcid.org/0000-0002-0950-6396">ORCID</a>
+    <a class="chip" href="https://www.researchgate.net/profile/Michael-Borck">ResearchGate</a>
+    <a class="chip" href="https://staffportal.curtin.edu.au/staff/profile/view/michael-borck-dbd276e7/">Staff Portal</a>
+    <a class="chip" href="https://x.com/Michael_Borck">X</a>
+    <a class="chip" href="https://www.youtube.com/@8020workshop">YouTube</a>
   </div>
 
   <footer>
