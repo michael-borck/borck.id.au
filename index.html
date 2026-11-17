@@ -38,7 +38,7 @@
       padding: 4rem 2rem 2rem;
     }
 
-    .header { margin-bottom: 3rem; }
+    .header { margin-bottom: 2rem; }
 
     .name {
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -57,10 +57,57 @@
       line-height: 1.7;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 0.85rem;
+    .search {
+      margin: 2rem 0 0;
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.6rem;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--gray-3);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search input:focus { border-color: var(--accent); }
+
+    .search .lens {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      color: var(--gray-2);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .search .hint {
+      position: absolute;
+      right: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--gray-2);
+      border: 1px solid var(--gray-3);
+      border-radius: 5px;
+      padding: 0.1rem 0.4rem;
+      pointer-events: none;
+    }
+
+    .search .status {
+      margin-top: 0.6rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gray-2);
+      min-height: 1em;
     }
 
     .section-label {
@@ -73,6 +120,12 @@
     }
 
     .section-label:first-of-type { margin-top: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
 
     .chips {
       display: flex;
@@ -123,6 +176,15 @@
       margin-top: 0.35rem;
     }
 
+    .empty {
+      padding: 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--gray-2);
+      border: 1px dashed var(--gray-3);
+      border-radius: 10px;
+    }
+
     footer {
       margin-top: 4rem;
       padding-top: 1.5rem;
@@ -133,93 +195,130 @@
 
     footer a { color: var(--accent); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
+
+    [hidden] { display: none !important; }
   </style>
 </head>
 <body>
 <main>
   <div class="header">
     <h1 class="name">Michael<br><span class="surname">Borck</span></h1>
-    <p class="role">Everything in one place.</p>
+    <p class="role">Everything in one place. Type to find it.</p>
   </div>
 
-  <h2 class="section-label">Built</h2>
-  <div class="grid">
-    <a class="link" href="https://borck.dev">
-      <span class="link-label">Bio</span>
-      <span class="link-dest">borck.dev</span>
-    </a>
-    <a class="link" href="https://borck.education">
-      <span class="link-label">Education</span>
-      <span class="link-dest">borck.education</span>
-    </a>
-    <a class="link" href="https://tools.borck.education">
-      <span class="link-label">Tools</span>
-      <span class="link-dest">tools.borck.education</span>
-    </a>
-    <a class="link" href="https://tools.borck.education">
-      <span class="link-label">Apps</span>
-      <span class="link-dest">tools.borck.education</span>
-    </a>
-    <a class="link" href="https://teach.borck.education">
-      <span class="link-label">Teaching</span>
-      <span class="link-dest">teach.borck.education</span>
-    </a>
-    <a class="link" href="https://books.borck.education">
-      <span class="link-label">Books</span>
-      <span class="link-dest">books.borck.education</span>
-    </a>
-    <a class="link" href="https://simulations.borck.education">
-      <span class="link-label">Simulations</span>
-      <span class="link-dest">simulations.borck.education</span>
-    </a>
-    <a class="link" href="https://research.borck.dev">
-      <span class="link-label">Research</span>
-      <span class="link-dest">research.borck.dev</span>
-    </a>
-    <a class="link" href="https://resume.borck.dev">
-      <span class="link-label">Resume</span>
-      <span class="link-dest">resume.borck.dev</span>
-    </a>
-    <a class="link" href="https://borck.consulting">
-      <span class="link-label">Consulting</span>
-      <span class="link-dest">borck.consulting</span>
-    </a>
-    <a class="link" href="https://theaiexchange.borck.education">
-      <span class="link-label">AI Exchange</span>
-      <span class="link-dest">theaiexchange.borck.education</span>
-    </a>
-    <a class="link" href="https://lms.curtin.edu.au/bbcswebdav/orgs/The_AI_Skills_Passport/arrivals-hall.html">
-      <span class="link-label">AI Skills Passport</span>
-      <span class="link-dest">lms.curtin.edu.au</span>
-    </a>
-    <a class="link" href="https://retroverse.studio">
-      <span class="link-label">Retroverse</span>
-      <span class="link-dest">retroverse.studio</span>
-    </a>
-    <a class="link" href="https://8020workshop.com">
-      <span class="link-label">Workshop</span>
-      <span class="link-dest">8020workshop.com</span>
-    </a>
+  <div class="search">
+    <span class="lens"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></span>
+    <input id="q" type="search" placeholder="filter — label, domain or keyword" autocomplete="off" spellcheck="false" />
+    <span class="hint">/</span>
+    <div class="status" id="status"></div>
   </div>
 
-  <h2 class="section-label">Elsewhere</h2>
-  <div class="chips">
-    <a class="chip" href="https://curtin.academia.edu/MichaelBorck">Academia</a>
-    <a class="chip" href="https://about.me/michaelborck">about.me</a>
-    <a class="chip" href="https://www.facebook.com/michael.borck/">Facebook</a>
-    <a class="chip" href="https://github.com/michael-borck">GitHub</a>
-    <a class="chip" href="https://scholar.google.com/citations?user=fwNMowoAAAAJ&hl=en">Google Scholar</a>
-    <a class="chip" href="https://linkedin.com/in/michaelborck">LinkedIn</a>
-    <a class="chip" href="https://orcid.org/0000-0002-0950-6396">ORCID</a>
-    <a class="chip" href="https://www.researchgate.net/profile/Michael-Borck">ResearchGate</a>
-    <a class="chip" href="https://staffportal.curtin.edu.au/staff/profile/view/michael-borck-dbd276e7/">Staff Portal</a>
-    <a class="chip" href="https://x.com/Michael_Borck">X</a>
-    <a class="chip" href="https://www.youtube.com/@8020workshop">YouTube</a>
-  </div>
+  <section data-section="built">
+    <h2 class="section-label">Built</h2>
+    <div class="grid"></div>
+  </section>
+
+  <section data-section="curtin">
+    <h2 class="section-label">At Curtin</h2>
+    <div class="grid"></div>
+  </section>
+
+  <section data-section="elsewhere">
+    <h2 class="section-label">Elsewhere</h2>
+    <div class="chips"></div>
+  </section>
 
   <footer>
     <p>Michael Borck · Perth, WA · <a href="mailto:hello@borck.dev">hello@borck.dev</a></p>
   </footer>
 </main>
+
+<script>
+const BUILT = [
+  { label: 'Bio', dest: 'borck.dev', url: 'https://borck.dev', tags: 'hub home wall' },
+  { label: 'Big picture', dest: 'bigpicture.borck.dev', url: 'https://bigpicture.borck.dev', tags: 'map argument threads curtin' },
+  { label: 'Consulting', dest: 'borck.consulting', url: 'https://borck.consulting', tags: 'advisory governance literacy diagnostic abn' },
+  { label: 'Decks', dest: 'borck.consulting/decks', url: 'https://borck.consulting/decks/', tags: 'slides deck-engine html' },
+  { label: 'Education', dest: 'borck.education', url: 'https://borck.education', tags: 'hub umbrella' },
+  { label: 'Tools', dest: 'tools.borck.education', url: 'https://tools.borck.education', tags: 'apps educators privacy-first' },
+  { label: 'Books', dest: 'books.borck.education', url: 'https://books.borck.education', tags: 'covers series kdp writing' },
+  { label: 'Teach', dest: 'teach.borck.education', url: 'https://teach.borck.education', tags: 'catalogue courses exec-ed workshops' },
+  { label: 'Simulations', dest: 'simulations.borck.education', url: 'https://simulations.borck.education', tags: 'directory worlds sims retailflow netsim audit defence' },
+  { label: 'WorkReady', dest: 'workready.eduserver.au', url: 'https://workready.eduserver.au', tags: 'internship placement simulation' },
+  { label: 'CloudCore', dest: 'cloudcore.eduserver.au', url: 'https://cloudcore.eduserver.au', tags: 'breach crm simulation' },
+  { label: 'Tessera', dest: 'tessera.locoensayo.org', url: 'https://tessera.locoensayo.org', tags: 'essential eight audit security simulation' },
+  { label: 'SimLab', dest: 'michael-borck.github.io/sim-lab', url: 'https://michael-borck.github.io/sim-lab/', tags: 'python agent-based stochastic framework' },
+  { label: 'Research', dest: 'research.borck.dev', url: 'https://research.borck.dev', tags: 'papers hci studies publications' },
+  { label: 'LocoLabo', dest: 'locolabo.org', url: 'https://locolabo.org', tags: 'lab local ai llm gpu bench' },
+  { label: 'LocoEnsayo', dest: 'locoensayo.org', url: 'https://locoensayo.org', tags: 'ensayo rehearsal scenarios' },
+  { label: 'Resume', dest: 'resume.borck.dev', url: 'https://resume.borck.dev', tags: 'cv twelve ways' },
+  { label: 'Conversation, Not Delegation', dest: 'conversationnotdelegation.com', url: 'https://conversationnotdelegation.com', tags: 'book cnd method' },
+  { label: 'The Human Edge', dest: 'thehumanedge.borck.dev', url: 'https://thehumanedge.borck.dev', tags: 'book masterclass practice' },
+  { label: 'RetroVerse', dest: 'retroverse.studio', url: 'https://retroverse.studio', tags: 'games atari karaoke numeron astrology 8-bit' },
+  { label: '80-20 Workshop', dest: '8020workshop.com', url: 'https://8020workshop.com', tags: 'workshop' },
+];
+
+const CURTIN = [
+  { label: 'AI Exchange', dest: 'theaiexchange.borck.education', url: 'https://theaiexchange.borck.education', tags: 'internal somm use cases' },
+  { label: 'AI Skills Passport', dest: 'lms.curtin.edu.au', url: 'https://lms.curtin.edu.au/bbcswebdav/orgs/The_AI_Skills_Passport/arrivals-hall.html', tags: 'literacy pd blackboard login' },
+  { label: 'Staff profile', dest: 'staffportal.curtin.edu.au', url: 'https://staffportal.curtin.edu.au/staff/profile/view/michael-borck-dbd276e7/', tags: 'curtin profile' },
+];
+
+const ELSEWHERE = [
+  { label: 'Academia', url: 'https://curtin.academia.edu/MichaelBorck', tags: 'papers' },
+  { label: 'about.me', url: 'https://about.me/michaelborck', tags: 'profile' },
+  { label: 'Facebook', url: 'https://www.facebook.com/michael.borck/', tags: 'social' },
+  { label: 'GitHub', url: 'https://github.com/michael-borck', tags: 'code repos' },
+  { label: 'Google Scholar', url: 'https://scholar.google.com/citations?user=fwNMowoAAAAJ&hl=en', tags: 'citations papers' },
+  { label: 'LinkedIn', url: 'https://linkedin.com/in/michaelborck', tags: 'social' },
+  { label: 'ORCID', url: 'https://orcid.org/0000-0002-0950-6396', tags: 'researcher id' },
+  { label: 'ResearchGate', url: 'https://www.researchgate.net/profile/Michael-Borck', tags: 'papers' },
+  { label: 'X', url: 'https://x.com/Michael_Borck', tags: 'social twitter' },
+  { label: 'YouTube', url: 'https://www.youtube.com/@8020workshop', tags: 'videos talks' },
+];
+
+const cards = [...BUILT.map(e => ({...e, section: 'built'})), ...CURTIN.map(e => ({...e, section: 'curtin'}))];
+const total = cards.length + ELSEWHERE.length;
+const input = document.getElementById('q');
+const status = document.getElementById('status');
+
+for (const e of cards) {
+  const a = document.createElement('a');
+  a.className = 'link';
+  a.href = e.url;
+  a.dataset.haystack = `${e.label} ${e.dest} ${e.tags}`.toLowerCase();
+  a.innerHTML = `<span class="link-label">${e.label}</span><span class="link-dest">${e.dest}</span>`;
+  document.querySelector(`section[data-section="${e.section}"] .grid`).appendChild(a);
+}
+for (const e of ELSEWHERE) {
+  const a = document.createElement('a');
+  a.className = 'chip';
+  a.href = e.url;
+  a.dataset.haystack = `${e.label} ${e.tags} ${e.url}`.toLowerCase();
+  a.textContent = e.label;
+  document.querySelector('section[data-section="elsewhere"] .chips').appendChild(a);
+}
+
+function apply() {
+  const q = input.value.trim().toLowerCase();
+  let shown = 0;
+  for (const sec of document.querySelectorAll('section[data-section]')) {
+    let visible = 0;
+    for (const el of sec.querySelectorAll('[data-haystack]')) {
+      const hit = !q || el.dataset.haystack.includes(q);
+      el.hidden = !hit;
+      if (hit) { visible++; shown++; }
+    }
+    sec.hidden = visible === 0;
+  }
+  status.textContent = q ? `${shown} of ${total} match` : '';
+}
+input.addEventListener('input', apply);
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+  if (e.key === 'Escape') { input.value = ''; apply(); input.blur(); }
+});
+apply();
+</script>
 </body>
 </html>
