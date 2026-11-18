@@ -472,6 +472,28 @@ const REGISTRY = [
   "updated": "2026-11-10"
  },
  {
+  "id": "winnow",
+  "title": "Winnow",
+  "kind": "tool",
+  "blurb": "Privacy-first literature search and review — verifies every DOI, grounds claims in quotes, and runs locally.",
+  "url": "https://winnow.borck.education",
+  "dest": "winnow.borck.education",
+  "tags": "TypeScript analyze public repo research tool",
+  "local": false,
+  "updated": "2026-11-14"
+ },
+ {
+  "id": "honeyguide",
+  "title": "Honeyguide",
+  "kind": "tool",
+  "blurb": "Finds and verifies supporting resources for your teaching — verified links, licensing status, and a pedagogical rationale for every suggestion.",
+  "url": "https://honeyguide.eduserver.au",
+  "dest": "honeyguide.eduserver.au",
+  "tags": "TypeScript create infra public repo research tool",
+  "local": false,
+  "updated": "2026-11-10"
+ },
+ {
   "id": "ensayo",
   "title": "Ensayo",
   "kind": "tool",
@@ -492,6 +514,39 @@ const REGISTRY = [
   "tags": "TypeScript create practice public repo tool",
   "local": false,
   "updated": "2026-11-10"
+ },
+ {
+  "id": "lorekeeper",
+  "title": "Lorekeeper",
+  "kind": "tool",
+  "blurb": "Story-driven courses for your personal learning path — short readings, checkpoints and hands-on challenges.",
+  "url": "https://lorekeeper.borck.education",
+  "dest": "lorekeeper.borck.education",
+  "tags": "JavaScript practice private repo tool",
+  "local": false,
+  "updated": "2026-11-09"
+ },
+ {
+  "id": "knotebook",
+  "title": "Knotebook",
+  "kind": "tool",
+  "blurb": "An LLM-friendly studio and player for branching stories, built on Ink. Write, publish, and play interactive narratives locally.",
+  "url": "https://knotebook.borck.education",
+  "dest": "knotebook.borck.education",
+  "tags": "TypeScript create practice public repo tool",
+  "local": false,
+  "updated": "2026-11-15"
+ },
+ {
+  "id": "cairn",
+  "title": "Cairn",
+  "kind": "tool",
+  "blurb": "A personal tutor that runs on your machine — imports your notes, maps your skills, and adapts practice.",
+  "url": "https://cairn.borck.education",
+  "dest": "cairn.borck.education",
+  "tags": "TypeScript practice public repo tool",
+  "local": false,
+  "updated": "2026-11-11"
  },
  {
   "id": "assessment-lens",
@@ -1308,6 +1363,39 @@ const REGISTRY = [
   "updated": "2026-11-03"
  },
  {
+  "id": "tools.borck.education",
+  "title": "Tools.borck.education",
+  "kind": "repo",
+  "blurb": "Provides AI-powered educational tools for teachers including curriculum creation, conversation practice, tutoring, and assignment feedback—all privacy-first and running locally.",
+  "url": "https://github.com/michael-borck/tools.borck.education",
+  "dest": "github.com/michael-borck/tools.borck.education",
+  "tags": "HTML public repo",
+  "local": false,
+  "updated": "2026-11-03"
+ },
+ {
+  "id": "frugal",
+  "title": "Frugal",
+  "kind": "repo",
+  "blurb": "One command to a working, auto-failover coding setup: a local 9Router with a ranked fallback chain of free, local and low-cost models.",
+  "url": "https://github.com/michael-borck/frugal",
+  "dest": "github.com/michael-borck/frugal",
+  "tags": "repo TypeScript public",
+  "local": false,
+  "updated": "2026-11-16"
+ },
+ {
+  "id": "borck.id.au",
+  "title": "Borck.id.au",
+  "kind": "repo",
+  "blurb": "Personal launcher webpage linking to Michael Borck's online presence and resources, built with static HTML and deployed via GitHub Pages.",
+  "url": "https://github.com/michael-borck/borck.id.au",
+  "dest": "github.com/michael-borck/borck.id.au",
+  "tags": "Python public repo",
+  "local": false,
+  "updated": "2026-11-18"
+ },
+ {
   "id": "borck.dev",
   "title": "Borck.dev",
   "kind": "repo",
@@ -1317,17 +1405,6 @@ const REGISTRY = [
   "tags": "Astro public repo",
   "local": false,
   "updated": "2026-11-07"
- },
- {
-  "id": "borck.id.au",
-  "title": "Borck.id.au",
-  "kind": "repo",
-  "blurb": "Personal launcher webpage linking to Michael Borck's online presence and resources, built with static HTML and deployed via GitHub Pages.",
-  "url": "https://github.com/michael-borck/borck.id.au",
-  "dest": "github.com/michael-borck/borck.id.au",
-  "tags": "HTML public repo",
-  "local": false,
-  "updated": "2026-08-12"
  },
  {
   "id": "mochila",
@@ -1385,28 +1462,6 @@ const REGISTRY = [
   "updated": "2026-11-07"
  },
  {
-  "id": "frugal",
-  "title": "Frugal",
-  "kind": "repo",
-  "blurb": "One command to a working, auto-failover coding setup: a local 9Router with a ranked fallback chain of free, local and low-cost models.",
-  "url": "https://github.com/michael-borck/frugal",
-  "dest": "github.com/michael-borck/frugal",
-  "tags": "repo TypeScript public",
-  "local": false,
-  "updated": "2026-11-16"
- },
- {
-  "id": "winnow",
-  "title": "Winnow",
-  "kind": "repo",
-  "blurb": "Find, verify, and weigh the literature. Locally.",
-  "url": "https://github.com/michael-borck/winnow",
-  "dest": "github.com/michael-borck/winnow",
-  "tags": "repo TypeScript public",
-  "local": false,
-  "updated": "2026-11-14"
- },
- {
   "id": "app-hq",
   "title": "App Hq",
   "kind": "repo",
@@ -1438,28 +1493,6 @@ const REGISTRY = [
   "tags": "repo JavaScript public",
   "local": false,
   "updated": "2026-11-16"
- },
- {
-  "id": "knotebook",
-  "title": "Knotebook",
-  "kind": "repo",
-  "blurb": "An LLM-friendly studio and player for branching stories, built on Ink. Write, publish, and play interactive narratives locally.",
-  "url": "https://github.com/michael-borck/knotebook",
-  "dest": "github.com/michael-borck/knotebook",
-  "tags": "repo TypeScript public",
-  "local": false,
-  "updated": "2026-11-15"
- },
- {
-  "id": "honeyguide",
-  "title": "Honeyguide",
-  "kind": "repo",
-  "blurb": "Finds and verifies supporting resources for your teaching — verified links, licensing status, and a pedagogical rationale for every suggestion.",
-  "url": "https://github.com/michael-borck/honeyguide",
-  "dest": "github.com/michael-borck/honeyguide",
-  "tags": "repo TypeScript public",
-  "local": false,
-  "updated": "2026-11-10"
  },
  {
   "id": "borck.consulting",
@@ -2045,17 +2078,6 @@ const REGISTRY = [
   "updated": "2026-11-12"
  },
  {
-  "id": "cairn",
-  "title": "Cairn",
-  "kind": "repo",
-  "blurb": "A local-first adaptive learning engine for self-directed learners.",
-  "url": "https://github.com/michael-borck/cairn",
-  "dest": "github.com/michael-borck/cairn",
-  "tags": "repo TypeScript public",
-  "local": false,
-  "updated": "2026-11-11"
- },
- {
   "id": "cairn-packs",
   "title": "Cairn Packs",
   "kind": "repo",
@@ -2087,17 +2109,6 @@ const REGISTRY = [
   "tags": "JavaScript public repo",
   "local": false,
   "updated": "2026-11-10"
- },
- {
-  "id": "lorekeeper",
-  "title": "Lorekeeper",
-  "kind": "repo",
-  "blurb": "Story-driven learning engine for information systems courses",
-  "url": "https://github.com/michael-borck/lorekeeper",
-  "dest": "github.com/michael-borck/lorekeeper",
-  "tags": "repo JavaScript private",
-  "local": false,
-  "updated": "2026-11-09"
  },
  {
   "id": "lorekeeper-site",
@@ -3132,17 +3143,6 @@ const REGISTRY = [
   "tags": "HTML public repo",
   "local": false,
   "updated": "2026-08-19"
- },
- {
-  "id": "tools.borck.education",
-  "title": "Tools.borck.education",
-  "kind": "repo",
-  "blurb": "Provides AI-powered educational tools for teachers including curriculum creation, conversation practice, tutoring, and assignment feedback—all privacy-first and running locally.",
-  "url": "https://github.com/michael-borck/tools.borck.education",
-  "dest": "github.com/michael-borck/tools.borck.education",
-  "tags": "HTML public repo",
-  "local": false,
-  "updated": "2026-11-03"
  },
  {
   "id": "programming.borck.education",
@@ -4802,17 +4802,6 @@ const REGISTRY = [
   "url": "file:///Volumes/Crucial%20X9/Projects/_archive/_archive/tessera-prefilter-backup-2026-08-06.bundle",
   "dest": "_archive/_archive/tessera-prefilter-backup-2026-08-06.bundle",
   "tags": "repo",
-  "local": true,
-  "updated": ""
- },
- {
-  "id": "curtin/research/ai-governance-exec-course",
-  "title": "Ai Governance Exec Course",
-  "kind": "research",
-  "blurb": "",
-  "url": "file:///Volumes/Crucial%20X9/Projects/curtin/research/ai-governance-exec-course",
-  "dest": "curtin/research/ai-governance-exec-course",
-  "tags": "research curtin",
   "local": true,
   "updated": ""
  },
