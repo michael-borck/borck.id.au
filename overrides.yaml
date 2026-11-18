@@ -1,0 +1,48 @@
+# Curation layer for the borck.id.au registry.
+# build-registry.py merges this over the generated entries, so re-runs
+# never lose judgment. Keys: pinned (always shown, in order), profiles,
+# hide (ids to drop), extra_tags (id -> extra keywords).
+
+pinned:
+  - id: bio
+    title: Bio
+    kind: site
+    dest: borck.dev
+    url: https://borck.dev
+    tags: hub home wall
+    order: 0
+  - id: decks-engine
+    title: Deck engine
+    kind: deck
+    dest: deck-engine.borck.dev
+    url: https://deck-engine.borck.dev
+    tags: slides html markdown presentations
+  - id: decks-cards
+    title: Card decks
+    kind: deck
+    dest: borck.consulting/decks
+    url: https://borck.consulting/decks/
+    tags: printable cards workshops analogue
+
+profiles:
+  - { id: academia, label: Academia, url: "https://curtin.academia.edu/MichaelBorck", tags: papers }
+  - { id: aboutme, label: about.me, url: "https://about.me/michaelborck", tags: profile }
+  - { id: facebook, label: Facebook, url: "https://www.facebook.com/michael.borck/", tags: social }
+  - { id: github, label: GitHub, url: "https://github.com/michael-borck", tags: code repos }
+  - { id: scholar, label: Google Scholar, url: "https://scholar.google.com/citations?user=fwNMowoAAAAJ&hl=en", tags: citations papers }
+  - { id: linkedin, label: LinkedIn, url: "https://linkedin.com/in/michaelborck", tags: social }
+  - { id: orcid, label: ORCID, url: "https://orcid.org/0000-0002-0950-6396", tags: researcher id }
+  - { id: researchgate, label: ResearchGate, url: "https://www.researchgate.net/profile/Michael-Borck", tags: papers }
+  - { id: x, label: X, url: "https://x.com/Michael_Borck", tags: social twitter }
+  - { id: youtube, label: YouTube, url: "https://www.youtube.com/@8020workshop", tags: videos talks }
+
+curtin:
+  - { id: ai-exchange, label: AI Exchange, dest: theaiexchange.borck.education, url: "https://theaiexchange.borck.education", tags: internal somm use cases }
+  - { id: skills-passport, label: AI Skills Passport, dest: lms.curtin.edu.au, url: "https://lms.curtin.edu.au/bbcswebdav/orgs/The_AI_Skills_Passport/arrivals-hall.html", tags: literacy pd blackboard login }
+  - { id: staff-profile, label: Staff profile, dest: staffportal.curtin.edu.au, url: "https://staffportal.curtin.edu.au/staff/profile/view/michael-borck-dbd276e7/", tags: curtin profile }
+
+hide: []
+
+extra_tags:
+  retroverse: "games atari karaoke numeron astrology 8-bit"
+  research: "papers studies publications"
